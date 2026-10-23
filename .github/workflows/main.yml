@@ -24,12 +24,15 @@ jobs:
           distribution: temurin
           java-version: "17"
 
+      
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
       - name: Accept Android SDK licences
+        shell: bash
         run: |
-          yes | sdkmanager --licenses || true
+          set -o pipefail
+          yes | sdkmanager --licenses
 
       - name: Install Android SDK packages
         run: |
