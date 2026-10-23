@@ -28,11 +28,13 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
+      
       - name: Accept Android SDK licences
         shell: bash
         run: |
           set -o pipefail
           yes | sdkmanager --licenses
+
 
       - name: Install Android SDK packages
         run: |
